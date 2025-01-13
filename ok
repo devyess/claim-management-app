@@ -1,0 +1,29 @@
+[33mcommit ce002fab4fb6e3f22523e254f6eeba617d5449b7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: devyess <90464696+devyess@users.noreply.github.com>
+Date:   Tue Jan 14 00:09:53 2025 +0530
+
+    adding build commands to package.json
+
+[33mcommit b1ee80205a58114e3afed018867d8f93b8c8a94c[m
+Author: devyess <90464696+devyess@users.noreply.github.com>
+Date:   Mon Jan 13 13:16:32 2025 +0530
+
+    enhancing download pdf option
+
+[33mcommit d7abf061eb260d267605bc5a67cbf5225af4b63a[m
+Author: devyess <90464696+devyess@users.noreply.github.com>
+Date:   Sat Jan 11 18:07:27 2025 +0530
+
+    Delete backend/uploads directory
+
+[33mcommit 4ff7df19f4d3cdcac1eb961d5576a6b585d44e30[m
+Author: devyess <90464696+devyess@users.noreply.github.com>
+Date:   Sat Jan 11 17:52:37 2025 +0530
+
+    adding README.md
+
+[33mcommit b94fd3fd110b76af3280b0fa48762002eab023a3[m
+Author: devyess <90464696+devyess@users.noreply.github.com>
+Date:   Sat Jan 11 17:44:44 2025 +0530
+
+    first commit
