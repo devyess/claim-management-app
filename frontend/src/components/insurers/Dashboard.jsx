@@ -101,6 +101,7 @@ const InsurerDashboard = () => {
 
       {/* Filter Form */}
       <div className="ml-10 mt-5">
+        <h3 className="text-lg font-bold">Filters</h3>
         <label className="mr-2">Status:</label>
         <select
           className="border p-1 rounded mr-4"

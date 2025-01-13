@@ -138,9 +138,8 @@ const EditClaim = () => {
             onChange={handleChange}
             className="border border-gray-400 p-2 w-80 mt-4 rounded"
           >
-            <option value="Pending">Pending</option>
-            <option value="Approved">Approved</option>
-            <option value="Rejected">Rejected</option>
+            <option value="Approved">Approve</option>
+            <option value="Rejected">Reject</option>
           </select>
           <input
             type="number"

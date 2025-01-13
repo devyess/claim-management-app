@@ -40,9 +40,7 @@ const claimSchema=new mongoose.Schema({
             type:String
       },
       claimFile:{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "File",
-            required: true,
+            type:String
       }
 })
 

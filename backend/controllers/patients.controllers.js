@@ -8,7 +8,6 @@ const claimFormValidation=require("../validations/claimForm.validation.js");
 const redisClient = require("../config/redis.config");
 const bcrypt = require("bcrypt");
 const jwt=require('jsonwebtoken');
-const File = require("../models/file.models");
 const patientRegister = async (req, res) => {
       const validatedData = registerValidation.safeParse(req.body);
       if (!validatedData.success) {
@@ -96,28 +95,19 @@ const createClaim = async (req, res) => {
         if (!validatedData.success) {
           return res.status(400).json(validatedData.error);
         }
-    
         const token = req.header("Authorization").split(" ")[1];
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const patient = await patients.findOne({ email: decoded.email });
         if (!patient) {
           return res.status(404).json({ message: "Patient not found" });
         }
-    
         const { userName, email, claimDescription, claimAmount } = req.body;
-    
-        // Handle file upload
-        let fileData = null;
-        if (req.file) {
-          fileData = new File({
-            filename: req.file.filename,
-            originalName: req.file.originalname,
-            path: req.file.path,
-            size: req.file.size,
-          });
-          await fileData.save();
+        
+        // Check if file was uploaded
+        if (!req.file) {
+          return res.status(400).json({ message: "No file uploaded" });
         }
-        console.log(fileData);
+    
         const claim = new claims({
           patient: patient._id,
           userName,
@@ -126,7 +116,7 @@ const createClaim = async (req, res) => {
           claimAmount,
           claimStatus: "Pending",
           submissionDate: new Date(),
-          claimFile: fileData ? fileData._id : null, // Save the file reference
+          claimFile: req.file.path // Save the file path
         });
     
         await claim.save();
